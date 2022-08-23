@@ -39,3 +39,30 @@
 
 // Lesson Question 3.2 - 1
 
+// https://noroff.herokuapp.com/v1/cat-facts/facts
+
+function greet(name = "John") {
+    return `Hello ${name}!`;  
+}
+
+
+
+const greetFunction = greet();
+
+console.log(greetFunction);
+
+
+
+
+
+// Lesson Question 3.2 - 2
+
+
+const messageContainer = document.querySelector(".container");
+
+const message = dynamicMessage("messageClass", "Welcome");
+
+messageContainer.innerHTML = message;
+
+
+
