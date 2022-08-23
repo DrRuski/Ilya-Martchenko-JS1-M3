@@ -41,15 +41,15 @@
 
 // https://noroff.herokuapp.com/v1/cat-facts/facts
 
-function greet(name = "John") {
-    return `Hello ${name}!`;  
-}
+// function greet(name = "John") {
+//     return `Hello ${name}!`;  
+// }
 
 
 
-const greetFunction = greet();
+// const greetFunction = greet();
 
-console.log(greetFunction);
+// console.log(greetFunction);
 
 
 
@@ -57,12 +57,33 @@ console.log(greetFunction);
 
 // Lesson Question 3.2 - 2
 
-
 const messageContainer = document.querySelector(".container");
 
-const message = dynamicMessage("messageClass", "Welcome");
+const message = dynamicMessage("messageClass", "Error Occured");
 
-messageContainer.innerHTML = message;
+
+
+
+// Lesson Question 3.2 - 3
+
+const url = "https://noroff.herokuapp.com/v1/cat-facts/facts";
+
+async function getFact() {
+
+    try {
+    const response = await fetch(url);
+    const results = await response.json();
+    console.log(results);
+    }
+
+    catch(error){
+    messageContainer.innerHTML = message;
+    console.log("Error");
+    }
+}
+getFact();
+
+
 
 
 
