@@ -80,6 +80,9 @@ async function getFact() {
     messageContainer.innerHTML = message;
     console.log("Error");
     }
+    finally  {
+        console.log("I did it");
+    }
 }
 getFact();
 
