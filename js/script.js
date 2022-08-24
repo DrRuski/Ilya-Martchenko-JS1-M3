@@ -57,9 +57,9 @@
 
 // Lesson Question 3.2 - 2
 
-const messageContainer = document.querySelector(".container");
+// const messageContainer = document.querySelector(".container");
 
-const message = dynamicMessage("messageClass", "Error Occured");
+// const message = dynamicMessage("messageClass", "Error Occured");
 
 
 
@@ -68,23 +68,23 @@ const message = dynamicMessage("messageClass", "Error Occured");
 
 const url = "https://noroff.herokuapp.com/v1/cat-facts/facts";
 
-async function getFact() {
+// async function getFact() {
 
-    try {
-    const response = await fetch(url);
-    const results = await response.json();
-    console.log(results);
-    }
+//     try {
+//     const response = await fetch(url);
+//     const results = await response.json();
+//     console.log(results);
+//     }
 
-    catch(error){
-    messageContainer.innerHTML = message;
-    console.log("Error");
-    }
-    finally  {
-        console.log("I did it");
-    }
-}
-getFact();
+//     catch(error){
+//     messageContainer.innerHTML = message;
+//     console.log("Error");
+//     }
+//     finally  {
+//         console.log("I did it");
+//     }
+// }
+// getFact();
 
 
 
@@ -95,3 +95,38 @@ getFact();
 
 
 // Lesson Question 3.3 - 1
+
+const greet = (name) => console.log(`Hello ${name}!`);
+  
+const add = (a, b) => console.log(a + b);
+
+greet("John");
+add(4,5);
+
+
+
+// Lesson Question 3.3 - 2
+
+async function getCatFacts() {
+    try {
+      const response = await fetch("https://noroff.herokuapp.com/v1/cat-facts/facts");
+      const results = await response.json();
+      console.log(results.length);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+fetch(url)
+  .then(function(response){
+    console.log(response);
+    return response.json();
+  })
+  .then(function(data){
+    createHTML(data);
+  })
+  .catch(function(error){
+    console.log(error);
+  })
+ 
